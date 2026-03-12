@@ -47,17 +47,14 @@
   void main(List<String> arguments) async {
     var runner = CommandRunner();
     await runner.run(arguments);
-    if(arguments.isEmpty || arguments.first == 'help'){
+    if (arguments.isEmpty || arguments.first == 'help') {
       printUsage();
-    } else if (arguments.first == 'version'){
+    } else if (arguments.first == 'version') {
       print('Dartpedia CLI version $version');
-    } else if(arguments.first == 'wikipedia') {
-      // print('Search command recognized!');
+    } else if (arguments.first == 'wikipedia') {
       final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
       searchWikipedia(inputArgs);
     } else {
       printUsage();
     }
-
-    
   }
